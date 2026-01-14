@@ -1,24 +1,9 @@
-services:
-  # 1. The Frontend (Static Site)
-  - type: web
-    name: demora-frontend
-    runtime: static
+# Render Blueprint for Demora Academy (Free Hosting)
+staticSites:
+  - name: demora-frontend
     buildCommand: npm run build
     staticPublishPath: dist
     routes:
       - type: rewrite
         source: /*
         destination: /index.html
-
-  # 2. The Backend (Future CMS & Webhooks)
-  # We will activate this once we build the Node server.
-  - type: web
-    name: demora-backend
-    runtime: node
-    buildCommand: npm install
-    startCommand: node server/index.js
-    envVars:
-      - key: DATABASE_URL
-        sync: false
-      - key: PAYSTACK_SECRET_KEY
-        sync: false

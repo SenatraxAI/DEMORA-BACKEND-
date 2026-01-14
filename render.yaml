@@ -1,13 +1,13 @@
 services:
   # 1. The Frontend (Static Site)
-  - type: web
+  - type: static
     name: demora-frontend
-    runtime: static
     buildCommand: npm run build
     staticPublishPath: dist
-    routingRules:
-      - route: /*
-        rewritePath: /index.html
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
 
   # 2. The Backend (Future CMS & Webhooks)
   # We will activate this once we build the Node server.

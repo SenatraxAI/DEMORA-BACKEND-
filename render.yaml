@@ -1,7 +1,8 @@
 services:
   # 1. The Frontend (Static Site)
-  - type: static
+  - type: web
     name: demora-frontend
+    runtime: static
     buildCommand: npm run build
     staticPublishPath: dist
     routes:

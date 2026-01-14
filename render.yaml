@@ -1,0 +1,23 @@
+services:
+  # 1. The Frontend (Static Site)
+  - type: web
+    name: demora-frontend
+    runtime: static
+    buildCommand: npm run build
+    staticPublishPath: dist
+    routingRules:
+      - route: /*
+        rewritePath: /index.html
+
+  # 2. The Backend (Future CMS & Webhooks)
+  # We will activate this once we build the Node server.
+  - type: web
+    name: demora-backend
+    runtime: node
+    buildCommand: npm install
+    startCommand: node server/index.js
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: PAYSTACK_SECRET_KEY
+        sync: false

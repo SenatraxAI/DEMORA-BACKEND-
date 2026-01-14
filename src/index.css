@@ -1,0 +1,158 @@
+/* Global Vars */
+:root {
+    --primary-black: #080808;
+    --primary-gold: #D4AF37;
+    --secondary-gold: #AA8C2C;
+    --dark-green: #002d00;
+    --accent-green: #004d00;
+    --text-white: #FFFFFF;
+    --text-off-white: #F8F8F8;
+    --text-gray: #A0A0A0;
+    --bg-dark: #0A0A0A;
+    --bg-card: rgba(30, 30, 30, 0.6);
+    --glass-bg: rgba(18, 18, 18, 0.7);
+    --glass-border: rgba(212, 175, 55, 0.1);
+
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --transition-speed: 0.4s;
+}
+
+/* Reset & Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-off-white);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    color: var(--text-white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-speed);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-gold {
+    color: var(--primary-gold);
+}
+
+.text-green {
+    color: var(--dark-green);
+}
+
+.text-gray {
+    color: var(--text-gray);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 2px solid var(--primary-gold);
+    color: var(--primary-gold);
+    background: transparent;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.btn:hover {
+    background: var(--primary-gold);
+    color: var(--primary-black);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+.btn-primary {
+    background: var(--primary-gold);
+    color: var(--primary-black);
+}
+
+.btn-primary:hover {
+    background: var(--secondary-gold);
+    border-color: var(--secondary-gold);
+}
+
+/* Section Common */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-gold);
+    margin: 15px auto 0;
+}
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1a1a 100%);
+    padding: 100px 0 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+}
+
+.gold-gradient-text {
+    background: linear-gradient(to right, #D4AF37, #F5E6AB, #AA8C2C);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
